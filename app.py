@@ -100,7 +100,7 @@ if st.button("💾 Simpan Data"):
             "wb"
         ) as f:
 
-        f.write(foto.getbuffer())
+            f.write(foto.getbuffer())
 
     data_baru = pd.DataFrame({
     "Kode":[kode],
