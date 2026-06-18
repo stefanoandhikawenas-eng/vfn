@@ -91,14 +91,14 @@ if st.button("💾 Simpan Data"):
 
     if foto is not None:
 
-    nama_foto = foto.name
+        nama_foto = foto.name
 
-    os.makedirs("photos", exist_ok=True)
+        os.makedirs("photos", exist_ok=True)
 
-    with open(
-        os.path.join("photos", nama_foto),
-        "wb"
-    ) as f:
+        with open(
+            os.path.join("photos", nama_foto),
+            "wb"
+        ) as f:
 
         f.write(foto.getbuffer())
 
