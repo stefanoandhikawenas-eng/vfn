@@ -114,7 +114,7 @@ if st.button("💾 Simpan Data"):
 })
 
     df_lama = pd.read_csv(
-        "data/singkapan.csv"
+        "singkapan.csv"
     )
 
     df = pd.concat(
@@ -123,14 +123,14 @@ if st.button("💾 Simpan Data"):
     )
 
     df.to_csv(
-        "data/singkapan.csv",
+        "singkapan.csv",
         index=False
     )
 
     st.success("Data berhasil disimpan!")
 
 df_dashboard = pd.read_csv(
-    "data/singkapan.csv"
+    "singkapan.csv"
 )
 
 st.divider()
@@ -154,7 +154,7 @@ st.divider()
 st.header("📊 Dashboard Data Singkapan")
 
 df_dashboard = pd.read_csv(
-    "data/singkapan.csv"
+    "singkapan.csv"
 )
 
 st.dataframe(
