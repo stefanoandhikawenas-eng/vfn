@@ -105,8 +105,8 @@ if st.button("💾 Simpan Data"):
     data_baru = pd.DataFrame({
     "Kode":[kode],
     "Nama_Lokasi":[nama],
-    "X":[x],
-    "Y":[y],
+    "Koordinat X (Easting)":[x],
+    "Koordinat Y (Northing)":[y],
     "Litologi":[litologi],
     "Deskripsi":[deskripsi],
     "Struktur":[struktur],
