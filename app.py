@@ -199,5 +199,5 @@ for i, row in df_dashboard.iterrows():
 
                 st.image(
                     path_foto,
-                    widht=300
+                    width=300
                 )
