@@ -169,20 +169,20 @@ for i, row in df_dashboard.iterrows():
     col1, col2 = st.columns([2,3])
 
     with col1:
-    st.write(f"**👤 Pengamat:** {row['Nama_Pengamat']}")
-    st.write(f"**📍 Lokasi:** {row['Nama_Lokasi']}")
-    st.write(f"**🏷️ Kode:** {row['Kode']}")
-    st.write(f"**🪨 Litologi:** {row['Litologi']}")
-    st.write(f"**🧭 Strike/Dip:** {row['Strike']}/{row['Dip']}")
+        st.write(f"**👤 Pengamat:** {row['Nama_Pengamat']}")
+        st.write(f"**📍 Lokasi:** {row['Nama_Lokasi']}")
+        st.write(f"**🏷️ Kode:** {row['Kode']}")
+        st.write(f"**🪨 Litologi:** {row['Litologi']}")
+        st.write(f"**🧭 Strike/Dip:** {row['Strike']}/{row['Dip']}")
 
-    st.write("**📝 Deskripsi Singkapan**")
-    st.write(row["Deskripsi"])
+        st.write("**📝 Deskripsi Singkapan**")
+        st.write(row["Deskripsi"])
 
-    st.write("**🔬 Deskripsi Batuan**")
-    st.write(row["Deskripsi_Batuan"])
+        st.write("**🔬 Deskripsi Batuan**")
+        st.write(row["Deskripsi_Batuan"])
 
-    st.write("**📐 Struktur Geologi**")
-    st.write(row["Struktur"])
+        st.write("**📐 Struktur Geologi**")
+        st.write(row["Struktur"])
 
     with col2:
 
