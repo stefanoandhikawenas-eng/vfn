@@ -84,22 +84,22 @@ strike = st.text_input("Strike")
 
 dip = st.text_input("Dip")
 
-if st.button("💾 Simpan Data"):
+iif st.button("💾 Simpan Data"):
 
     nama_foto = ""
 
-   if foto is not None:
+    if foto is not None:
 
-    nama_foto = foto.name
+        nama_foto = foto.name
 
-    os.makedirs("photos", exist_ok=True)
+        os.makedirs("photos", exist_ok=True)
 
-    with open(
-        os.path.join("photos", nama_foto),
-        "wb"
-    ) as f:
+        with open(
+            os.path.join("photos", nama_foto),
+            "wb"
+        ) as f:
 
-        f.write(foto.getbuffer())
+            f.write(foto.getbuffer())
 
     data_baru = pd.DataFrame({
         "Nama_Pengamat":[nama_pengamat],
@@ -115,9 +115,8 @@ if st.button("💾 Simpan Data"):
         "Dip":[dip],
         "Foto":[nama_foto]
     })
-    df_lama = pd.read_csv(
-        "singkapan.csv"
-    )
+
+    df_lama = pd.read_csv("singkapan.csv")
 
     df = pd.concat(
         [df_lama, data_baru],
