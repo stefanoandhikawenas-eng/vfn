@@ -13,23 +13,11 @@ st.title("🪨 Virtual Field Notebook")
 
 st.header("Input Data Singkapan")
 
-kode = st.text_input("Nama Lokasi")
+nama_pengamat = st.text_input("Nama Pengamat")
 
-nama = st.text_input("Kode Stasiun")
+nama_lokasi = st.text_input("Nama Lokasi")
 
-metode_foto = st.radio(
-    "Metode Foto",
-    ["📁 Upload File", "📷 Kamera"]
-)
-
-if metode_foto == "📷 Kamera":
-    foto = st.camera_input("Ambil Foto Singkapan")
-
-else:
-    foto = st.file_uploader(
-        "Upload Foto Singkapan",
-        type=["jpg", "jpeg", "png"]
-    )
+kode_stasiun = st.text_input("Kode Stasiun")
 
 x = st.number_input(
     "Koordinat X (Easting)",
@@ -40,6 +28,19 @@ y = st.number_input(
     "Koordinat Y (Northing)",
     format="%.2f"
 )
+
+metode_foto = st.radio(
+    "Metode Foto",
+    ["📁 Upload File", "📷 Kamera"]
+)
+
+if metode_foto == "📷 Kamera":
+    foto = st.camera_input("Ambil Foto Singkapan")
+else:
+    foto = st.file_uploader(
+        "Upload Foto Singkapan",
+        type=["jpg", "jpeg", "png"]
+    )
 
 litologi = st.selectbox(
     "Jenis Batuan (Litologi)",
@@ -60,14 +61,12 @@ if litologi == "Lainnya":
 
 deskripsi = st.text_area(
     "Deskripsi Singkapan",
-    height=150,
-    placeholder="Contoh: Singkapan berwarna, orientasi, dimensi, kondisi..."
+    height=150
 )
 
 deskripsi_batuan = st.text_area(
     "Deskripsi Batuan",
-    height=150,
-    placeholder="Contoh: Batupasir abu-abu terang, ukuran butir sedang, sortasi baik, semen silika..."
+    height=150
 )
 
 struktur = st.multiselect(
@@ -103,8 +102,9 @@ if st.button("💾 Simpan Data"):
             f.write(foto.getbuffer())
 
     data_baru = pd.DataFrame({
-    "Kode":[kode],
-    "Nama_Lokasi":[nama],
+    "Nama_Pengamat":[nama_pengamat],
+    "Kode":[kode_stasiun],
+    "Nama_Lokasi":[nama_lokasi],
     "Koordinat X (Easting)":[x],
     "Koordinat Y (Northing)":[y],
     "Litologi":[litologi],
