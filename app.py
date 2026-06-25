@@ -88,34 +88,33 @@ if st.button("💾 Simpan Data"):
 
     nama_foto = ""
 
-    if foto is not None:
+   if foto is not None:
 
-        nama_foto = foto.name
+    nama_foto = foto.name
 
-        os.makedirs("photos", exist_ok=True)
+    os.makedirs("photos", exist_ok=True)
 
-        with open(
-            os.path.join("photos", nama_foto),
-            "wb"
-        ) as f:
+    with open(
+        os.path.join("photos", nama_foto),
+        "wb"
+    ) as f:
 
-            f.write(foto.getbuffer())
+        f.write(foto.getbuffer())
 
-   data_baru = pd.DataFrame({
-    "Nama_Pengamat":[nama_pengamat],
-    "Kode":[kode_stasiun],
-    "Nama_Lokasi":[nama_lokasi],
-    "Koordinat X (Easting)":[x],
-    "Koordinat Y (Northing)":[y],
-    "Litologi":[litologi],
-    "Deskripsi":[deskripsi],
-    "Deskripsi_Batuan":[deskripsi_batuan],
-    "Struktur":[struktur],
-    "Strike":[strike],
-    "Dip":[dip],
-    "Foto":[nama_foto]
-})
-
+    data_baru = pd.DataFrame({
+        "Nama_Pengamat":[nama_pengamat],
+        "Kode":[kode_stasiun],
+        "Nama_Lokasi":[nama_lokasi],
+        "Koordinat X (Easting)":[x],
+        "Koordinat Y (Northing)":[y],
+        "Litologi":[litologi],
+        "Deskripsi":[deskripsi],
+        "Deskripsi_Batuan":[deskripsi_batuan],
+        "Struktur":[struktur],
+        "Strike":[strike],
+        "Dip":[dip],
+        "Foto":[nama_foto]
+    })
     df_lama = pd.read_csv(
         "singkapan.csv"
     )
