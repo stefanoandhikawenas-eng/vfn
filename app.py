@@ -164,14 +164,29 @@ st.dataframe(
 )
 for i, row in df_dashboard.iterrows():
 
-    if row["Foto"] != "":
+    st.divider()
 
-        path_foto = os.path.join("photos", row["Foto"])
+    col1, col2 = st.columns([2,3])
 
-        if os.path.exists(path_foto):
+    with col1:
+        st.write(f"**Lokasi:** {row['Nama_Lokasi']}")
+        st.write(f"**Litologi:** {row['Litologi']}")
+        st.write(f"**Strike/Dip:** {row['Strike']}/{row['Dip']}")
 
-            st.image(
-                path_foto,
-                caption=f"{row['Kode']} - {row['Nama_Lokasi']}",
-                width=300
+    with col2:
+
+        nama_foto = str(row["Foto"])
+
+        if nama_foto not in ["", "None", "nan"]:
+
+            path_foto = os.path.join(
+                "photos",
+                nama_foto
             )
+
+            if os.path.exists(path_foto):
+
+                st.image(
+                    path_foto,
+                    use_container_width=True
+                )
