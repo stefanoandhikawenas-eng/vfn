@@ -84,7 +84,7 @@ strike = st.text_input("Strike")
 
 dip = st.text_input("Dip")
 
-iif st.button("💾 Simpan Data"):
+if st.button("💾 Simpan Data"):
 
     nama_foto = ""
 
