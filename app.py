@@ -101,7 +101,7 @@ if st.button("💾 Simpan Data"):
 
             f.write(foto.getbuffer())
 
-    data_baru = pd.DataFrame({
+   data_baru = pd.DataFrame({
     "Nama_Pengamat":[nama_pengamat],
     "Kode":[kode_stasiun],
     "Nama_Lokasi":[nama_lokasi],
@@ -109,6 +109,7 @@ if st.button("💾 Simpan Data"):
     "Koordinat Y (Northing)":[y],
     "Litologi":[litologi],
     "Deskripsi":[deskripsi],
+    "Deskripsi_Batuan":[deskripsi_batuan],
     "Struktur":[struktur],
     "Strike":[strike],
     "Dip":[dip],
