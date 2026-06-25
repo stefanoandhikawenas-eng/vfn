@@ -162,3 +162,16 @@ st.dataframe(
     df_dashboard,
     width="stretch"
 )
+for i, row in df_dashboard.iterrows():
+
+    if row["Foto"] != "":
+
+        path_foto = os.path.join("photos", row["Foto"])
+
+        if os.path.exists(path_foto):
+
+            st.image(
+                path_foto,
+                caption=f"{row['Kode']} - {row['Nama_Lokasi']}",
+                width=300
+            )
